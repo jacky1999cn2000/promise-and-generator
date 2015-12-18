@@ -28,9 +28,17 @@ let result = yield Promise.resolve(value);
 
 程序执行到这里的时候会停下来，等待异步方法返回(可以是网络访问的request,可以是sailsjs的数据库操作,事实上,支持任何异步并返回Promise的方法)
 
+注意所有使用 yield 关键字的代码必须在 co(function* {})里面，另外JS原生的函数里面不能使用，比如下面这种是不可以的:
+
+```
+someArray.forEach(function(obj){
+    let result = yield request({url:xxx,id:obj.id});
+})
+```
+
 co有两种返回模式 - 1.返回Promise(被其他的co函数调用) 2.返回最终数值
 
-第一种模式: 整个函数有一个返回值 - return co(function* (){...}); 函数里面的代码也有一个返回值。
+第一种模式: 整个函数有一个返回值 - return co(function* (){...}); 函数里面的代码也有一个返回值。(当然在函数里可以用yield来做异步调用)
 
 简单地说，这个函数的返回值为Promise(resObj)
 
