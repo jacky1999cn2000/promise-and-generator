@@ -2,19 +2,19 @@
 
 这里的代码主要是为了说明co和co-request(基于generator promise)的用法
 
-generator: https://www.npmjs.com/package/co-request
-co: https://www.npmjs.com/package/co
-co-request: https://www.npmjs.com/package/co-request
+* generator: https://www.npmjs.com/package/co-request
+* co: https://www.npmjs.com/package/co
+* co-request: https://www.npmjs.com/package/co-request
 
 简单地说，generator提供了让异步程序停下来的机制，而co则利用这个机制，为异步编程提供了一个便捷的流程控制架构；
 co-request是co架构里对request npm的包装。
 
 这里的4个文件是从sailsjs project中摘取的
 
-Challenge.js - model
-ChallengeController.js - controller
-ChallengeService.js - service
-runLocal.sh - bash
+* Challenge.js - model
+* ChallengeController.js - controller
+* ChallengeService.js - service
+* runLocal.sh - bash
 
 最简单的例子就是：
 
